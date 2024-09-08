@@ -1,0 +1,32 @@
+---
+title: "Assignment: 1 – Loading Data into a Data Frame"
+author: "MD Asadul Islam"
+date: "`r Sys.Date()`"
+output: openintro::lab_report
+---
+
+### Overview
+
+The data I will be working with for this assignment is drug use by age and is associated with the article how baby boomers get high. The data covers thirteen drugs across 17 age groups and its main objective is to create a story on how baby boomers get high. Some of th drugs that are covered include alcohol, marijuana, cocaine, heroine, crack, hallucinogen, inhalant, pain reliever, meth, sedative, Oxycontin, tranquilizer, and stimulant and the data is recorded over a period of 12 months by recording each drug and its frequency. \### Article Link The link to the article is: <https://fivethirtyeight.com/features/how-baby-boomers-get-high/>
+
+### Load Data
+
+```{r code-chunk-label for data loading}
+# Reading data from the Github link
+drug_use_by_age_url<-read.csv("https://raw.githubusercontent.com/fivethirtyeight/data/master/drug-use-by-age/drug-use-by-age.csv", header= TRUE, sep=",")
+drug_use_by_age_url
+```
+
+### Subset and Dataframe
+
+```{r code-chunk-label for loading data into dataframe}
+# subset into percentages and put into dataframe
+drug_use <- data.frame(drug_use_by_age_url$age, drug_use_by_age_url$n, drug_use_by_age_url$alcohol_use, drug_use_by_age_url$marijuana_use, drug_use_by_age_url$cocaine_use, drug_use_by_age_url$crack_use, drug_use_by_age_url$heroin_use, drug_use_by_age_url$hallucinogen_use, drug_use_by_age_url$inhalant_use, drug_use_by_age_url$pain_releiver_use, drug_use_by_age_url$oxycontin_frequency, drug_use_by_age_url$tranquilizer_use, drug_use_by_age_url$stimulant_use, drug_use_by_age_url$meth_use, drug_use_by_age_url$sedative_use)
+
+colnames(drug_use) <- c("Age", "Number of People", "Alcohol use", "Marijuana Use", "Cocaine Use", "Crack Use", "Heroine Use", "Hallucinogen Use", "Inhalant Use", "Pain Reliever Use", "Oxycontin use", "Tranquilizer Use", "Stimulant Use", "Meth Use", "Sedative Use")
+drug_use
+```
+
+### Conclusion
+
+The data above shows the drug use across people of various ages. Over the past decade, baby boomers have exhibited higher rates of illicit drug use and drug-related issues than previous generations. Data shows that while many consume alcohol (67%) and marijuana, fewer use other drugs. For instance, boomers who use cocaine reported 36 days of use per year, significantly higher than younger groups. Although younger boomers (50-54) show increasing drug use compared to older ones (60-64), overall rates remain lower than younger age groups.
