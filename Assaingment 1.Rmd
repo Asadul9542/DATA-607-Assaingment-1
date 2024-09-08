@@ -1,5 +1,5 @@
 ---
-title: "Assignment: 1 – Loading Data into a Data Frame"
+title: "Data 607/ Assignment: 1 – Loading Data into a Data Frame"
 author: "MD Asadul Islam"
 date: "`r Sys.Date()`"
 output: openintro::lab_report
